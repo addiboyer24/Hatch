@@ -1,7 +1,7 @@
-\title{\textbf{Hatch} - A Python Preprocessor}
+\title{\textbf{H a t c h} - A Python Preprocessor}
 
 \author{
-	Addison Boyer \\
+	\textbf{Addison Boyer} \\
 	\textit{Natural Language Processing} \\
 	\textit{Spring 2020}
 }
@@ -43,29 +43,41 @@
 \pagebreak
 
 \section{Getting Started}
-\paragraph{} All Hatch statements begin with the special Hatch comment identifier (\textbf{\#!}).  If the preprocessor comment identifier is not present, the line will be treated as interpretable Python code.  All lines beginning with \textbf{\#!} will ``hatch'' into interpretable Python code, given the correct Hatch syntax.
+\paragraph{} All Hatch statements begin with a special Hatch comment identifier (\textbf{\#!}).  If the Hatch comment identifier is not present, the line will be treated as interpretable Python code.  All lines beginning with \textbf{\#!} will ``hatch'' into interpretable Python code, given the correct Hatch syntax.
 
 \section{Keywords}
 \begin{enumerate}
 \item{\textbf{class}}
-\paragraph{}Used to define a class in hatch.
+- Used to define a Python class in Hatch.
 \item{\textbf{get}}
-\paragraph{}Used to define getter(s) in hatch.
+- Used to define an attributes getter/getters in Hatch.
 \item{\textbf{set}}
-\paragraph{}Used to define setter(s) in hatch.
+- Used to define an attributes setter/setters in Hatch.
 \item{\textbf{str}}
-\paragraph{}Used to define a toString() in hatch.
+- Used to define a classes toString() method in Hatch.
 \item{\textbf{hatch()}}
-\paragraph{}Used to exit a hatch interactive shell.
+- Used to exit a Hatch interactive shell.
 \end{enumerate}
 
 \section{The Hatch Egg}
-\paragraph{}The hatch egg is where parameter and attribute names are passed into.  An empty hatch egg will result in the following error: \textit{Empty egg to be hatched, aborting..}
+\paragraph{}The Hatch egg is where parameter and attribute names are passed.  An egg consists of a comma delimited list of variable names surrounded by parenthesis.  An empty hatch egg will result in the following error: \textit{Empty egg to be hatched, aborting..}
 
-\section{Hatch Syntax}
-\begin{center}
-\#! class Person = (name, age)
-\end{center}
+\section{Syntax}
+\begin{enumerate}
+\item{\textbf{Class Declarations}} \\ \\
+\#! class = (name, age, ...)
+\item{\textbf{Getter Declarations}} \\ \\
+\#! get = (name, age, ...)
+\item{\textbf{Setter Declarations}} \\ \\
+\#! set = (name, age, ...)
+\item{\textbf{toString() Declarations}} \\ \\
+\#! str = (name, age, ...)
+\item{\textbf{Variable Declarations}} \\ \\
+\#! name = `Addison' \\ \\
+\#! age = 20 \\ \\
+\#! age = 20.0 \\ \\
+\end{enumerate}
+
 
 \section{Hello Hatch}
 
@@ -87,7 +99,7 @@ if(__name__ == "__main__"):
 	main(sys.argv[1:])
 
 \end{lstlisting}
-\textbf{make -B} \\ \\
+\textbf{make -B} \\
 \textbf{./interpreter.out HelloHatch.Hatch $>$ HelloHatch.py} \\
 \begin{lstlisting}
 # HelloHatch.py
