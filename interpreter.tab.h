@@ -48,19 +48,20 @@ extern int yydebug;
     CLASS = 258,
     COMMA = 259,
     EQUALS = 260,
-    EOL = 261,
-    GET = 262,
-    STR = 263,
-    STRING = 264,
-    INDENT = 265,
-    LPAREN = 266,
-    NUM_F = 267,
-    NUM_I = 268,
-    PYTHONLINE = 269,
-    RPAREN = 270,
-    SET = 271,
-    START = 272,
-    VARNAME = 273
+    EXIT = 261,
+    EOL = 262,
+    GET = 263,
+    STR = 264,
+    STRING = 265,
+    INDENT = 266,
+    LPAREN = 267,
+    NUM_F = 268,
+    NUM_I = 269,
+    PYTHONLINE = 270,
+    RPAREN = 271,
+    SET = 272,
+    START = 273,
+    VARNAME = 274
   };
 #endif
 
@@ -76,7 +77,7 @@ union YYSTYPE
 	char* sVal;
 	
 
-#line 80 "interpreter.tab.h" /* yacc.c:1909  */
+#line 81 "interpreter.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

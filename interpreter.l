@@ -28,16 +28,15 @@
 
 
 %%
-
 <INITIAL>{
 
 [\n]                        {yylineno++; return EOL;}
 
 ^[ \t]+                     {int count = 0; for(int i = 0; i < strlen(yytext); i++){if (yytext[i] == '\t'){count += 1;}} yylval.sVal = strdup(yytext); yylval.iVal = count; return INDENT;}
 
-
 "#!".*                      {yyless(0); BEGIN(PREPROCESSOR);}
 
+"hatch()"                   {return EXIT;}
 
 [a-zA-Z].*                  {yylval.sVal = strdup(yytext); return PYTHONLINE;}
 

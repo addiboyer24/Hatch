@@ -276,19 +276,20 @@ extern int yydebug;
     CLASS = 258,
     COMMA = 259,
     EQUALS = 260,
-    EOL = 261,
-    GET = 262,
-    STR = 263,
-    STRING = 264,
-    INDENT = 265,
-    LPAREN = 266,
-    NUM_F = 267,
-    NUM_I = 268,
-    PYTHONLINE = 269,
-    RPAREN = 270,
-    SET = 271,
-    START = 272,
-    VARNAME = 273
+    EXIT = 261,
+    EOL = 262,
+    GET = 263,
+    STR = 264,
+    STRING = 265,
+    INDENT = 266,
+    LPAREN = 267,
+    NUM_F = 268,
+    NUM_I = 269,
+    PYTHONLINE = 270,
+    RPAREN = 271,
+    SET = 272,
+    START = 273,
+    VARNAME = 274
   };
 #endif
 
@@ -304,7 +305,7 @@ union YYSTYPE
 	char* sVal;
 	
 
-#line 308 "interpreter.tab.c" /* yacc.c:355  */
+#line 309 "interpreter.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -321,7 +322,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 325 "interpreter.tab.c" /* yacc.c:358  */
+#line 326 "interpreter.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -561,23 +562,23 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  15
+#define YYFINAL  16
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   34
+#define YYLAST   35
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  19
+#define YYNTOKENS  20
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  8
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  21
+#define YYNRULES  22
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  39
+#define YYNSTATES  40
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   273
+#define YYMAXUTOK   274
 
 #define YYTRANSLATE(YYX)                                                \
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -613,16 +614,16 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18
+      15,    16,    17,    18,    19
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   236,   236,   236,   244,   247,   257,   267,   272,   277,
-     282,   287,   293,   299,   305,   312,   322,   329,   336,   341,
-     347,   352
+       0,   237,   237,   237,   245,   248,   258,   268,   273,   278,
+     283,   288,   293,   299,   305,   311,   318,   328,   335,   342,
+     347,   353,   358
 };
 #endif
 
@@ -631,10 +632,10 @@ static const yytype_uint16 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "CLASS", "COMMA", "EQUALS", "EOL", "GET",
-  "STR", "STRING", "INDENT", "LPAREN", "NUM_F", "NUM_I", "PYTHONLINE",
-  "RPAREN", "SET", "START", "VARNAME", "$accept", "prog", "$@1", "line",
-  "preLine", "assign", "bcommaExpr", "commaExpr", YY_NULLPTR
+  "$end", "error", "$undefined", "CLASS", "COMMA", "EQUALS", "EXIT",
+  "EOL", "GET", "STR", "STRING", "INDENT", "LPAREN", "NUM_F", "NUM_I",
+  "PYTHONLINE", "RPAREN", "SET", "START", "VARNAME", "$accept", "prog",
+  "$@1", "line", "preLine", "assign", "bcommaExpr", "commaExpr", YY_NULLPTR
 };
 #endif
 
@@ -644,16 +645,16 @@ static const char *const yytname[] =
 static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268,   269,   270,   271,   272,   273
+     265,   266,   267,   268,   269,   270,   271,   272,   273,   274
 };
 # endif
 
-#define YYPACT_NINF -17
+#define YYPACT_NINF -18
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-17)))
+  (!!((Yystate) == (-18)))
 
-#define YYTABLE_NINF -10
+#define YYTABLE_NINF -11
 
 #define yytable_value_is_error(Yytable_value) \
   0
@@ -662,10 +663,10 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       0,     2,   -17,    -3,     3,    -5,   -17,   -17,   -17,   -16,
-       4,    13,    18,    21,   -17,   -17,   -17,    22,    -4,    -4,
-      -4,    -1,     0,    -4,     7,   -17,   -17,   -17,   -17,   -17,
-     -17,   -17,   -17,   -17,    24,    14,    12,   -17,   -17
+       2,   -18,     6,   -18,    -3,     1,    -5,   -18,   -18,   -18,
+      -9,    17,    20,    22,    23,   -18,   -18,   -18,    24,    -1,
+      -1,    -1,     5,     2,    -1,     7,   -18,   -18,   -18,   -18,
+     -18,   -18,   -18,   -18,   -18,     8,    14,    12,   -18,   -18
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -673,22 +674,22 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       4,     0,     7,     0,     0,     0,     8,     5,     6,     0,
-       0,     0,     0,     0,    10,     1,     2,     0,     0,     0,
-       0,     0,     4,     0,     0,    15,    17,    16,    13,    12,
-      11,     3,    14,    19,    21,     0,     0,    18,    20
+       4,     9,     0,     7,     0,     0,     0,     8,     5,     6,
+       0,     0,     0,     0,     0,    11,     1,     2,     0,     0,
+       0,     0,     0,     4,     0,     0,    16,    18,    17,    14,
+      13,    12,     3,    15,    20,    22,     0,     0,    19,    21
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -17,     9,   -17,   -17,    31,   -17,     1,    -2
+     -18,     9,   -18,   -18,    31,   -18,   -17,    -2
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     4,    22,     5,     6,    14,    25,    35
+      -1,     5,    23,     6,     7,    15,    26,    36
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -696,44 +697,44 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       9,    16,    17,    15,    10,    11,    -9,    24,    28,    18,
-       1,    29,    30,    12,     2,    13,     7,     3,    19,     3,
-      26,    27,    33,    20,    32,    34,    21,    23,    36,    37,
-      34,    31,     8,     0,    38
+      10,    16,    17,    27,    28,    11,    12,    33,     1,   -10,
+      18,    25,    37,     2,    13,    29,    14,     3,    30,    31,
+       4,     8,    19,    34,     4,    20,    35,    21,    22,    24,
+      38,    35,    32,     9,     0,    39
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,     6,    18,     0,     7,     8,     6,    11,     9,     5,
-      10,    12,    13,    16,    14,    18,    14,    17,     5,    17,
-      19,    20,    15,     5,    23,    18,     5,     5,     4,    15,
-      18,    22,     1,    -1,    36
+       3,     0,     7,    20,    21,     8,     9,    24,     6,     7,
+      19,    12,     4,    11,    17,    10,    19,    15,    13,    14,
+      18,    15,     5,    16,    18,     5,    19,     5,     5,     5,
+      16,    19,    23,     2,    -1,    37
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,    10,    14,    17,    20,    22,    23,    14,    23,     3,
-       7,     8,    16,    18,    24,     0,     6,    18,     5,     5,
-       5,     5,    21,     5,    11,    25,    25,    25,     9,    12,
-      13,    20,    25,    15,    18,    26,     4,    15,    26
+       0,     6,    11,    15,    18,    21,    23,    24,    15,    24,
+       3,     8,     9,    17,    19,    25,     0,     7,    19,     5,
+       5,     5,     5,    22,     5,    12,    26,    26,    26,    10,
+      13,    14,    21,    26,    16,    19,    27,     4,    16,    27
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    19,    21,    20,    20,    22,    22,    22,    22,    22,
-      23,    24,    24,    24,    24,    24,    24,    24,    25,    25,
-      26,    26
+       0,    20,    22,    21,    21,    23,    23,    23,    23,    23,
+      23,    24,    25,    25,    25,    25,    25,    25,    25,    26,
+      26,    27,    27
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     0,     4,     0,     2,     2,     1,     1,     0,
-       2,     3,     3,     3,     4,     3,     3,     3,     3,     2,
-       3,     1
+       0,     2,     0,     4,     0,     2,     2,     1,     1,     1,
+       0,     2,     3,     3,     3,     4,     3,     3,     3,     3,
+       2,     3,     1
 };
 
 
@@ -1410,7 +1411,7 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 236 "interpreter.y" /* yacc.c:1646  */
+#line 237 "interpreter.y" /* yacc.c:1646  */
     {
 		//std::cout << "line EOL prog" << std::endl;
 
@@ -1419,11 +1420,11 @@ yyreduce:
 		char* empty = new char[0];
 		(yyvsp[-1].sVal) = empty;
 			 }
-#line 1423 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1424 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 247 "interpreter.y" /* yacc.c:1646  */
+#line 248 "interpreter.y" /* yacc.c:1646  */
     {
 	
 	char* tabs = getTabs((yyvsp[-1].iVal));
@@ -1433,11 +1434,11 @@ yyreduce:
 
 	//printf("INDENT x %i line\n", $1);
 }
-#line 1437 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1438 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 257 "interpreter.y" /* yacc.c:1646  */
+#line 258 "interpreter.y" /* yacc.c:1646  */
     {
 		//printf("Code generated by hatch\n%s", $2);
 		// start to construct the multiline preline expansion
@@ -1447,51 +1448,50 @@ yyreduce:
 
 		
 	}
-#line 1451 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1452 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 267 "interpreter.y" /* yacc.c:1646  */
+#line 268 "interpreter.y" /* yacc.c:1646  */
     {
 		(yyval.sVal) = (yyvsp[0].sVal);
 		//std::cout << "PYTHONLINE: " << $1 << std::endl;
 	}
-#line 1460 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1461 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 272 "interpreter.y" /* yacc.c:1646  */
+#line 273 "interpreter.y" /* yacc.c:1646  */
     {
 		//printf("# Code generated by hatch\n%s", $1);
 		(yyval.sVal) = (yyvsp[0].sVal);
 	}
-#line 1469 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1470 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 277 "interpreter.y" /* yacc.c:1646  */
+#line 278 "interpreter.y" /* yacc.c:1646  */
+    {
+		std::cout << "Exiting hatch.." << std::endl;
+		exit(0);
+	}
+#line 1479 "interpreter.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 10:
+#line 283 "interpreter.y" /* yacc.c:1646  */
     {
 		char* newLine = new char[1]{'\n'};
 		(yyval.sVal) = newLine;
 	}
-#line 1478 "interpreter.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 10:
-#line 282 "interpreter.y" /* yacc.c:1646  */
-    {
-	(yyval.sVal) = (yyvsp[0].sVal);
-	//std::cout << "START assign" << std::endl;
-}
-#line 1487 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1488 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 287 "interpreter.y" /* yacc.c:1646  */
+#line 288 "interpreter.y" /* yacc.c:1646  */
     {
-	strcat((yyvsp[-2].sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal)));
-	(yyval.sVal) = (yyvsp[-2].sVal);
-	//std::cout << "VARNAME EQUALS NUM_I" << std::endl;
+	(yyval.sVal) = (yyvsp[0].sVal);
+	//std::cout << "START assign" << std::endl;
 }
 #line 1497 "interpreter.tab.c" /* yacc.c:1646  */
     break;
@@ -1499,10 +1499,10 @@ yyreduce:
   case 12:
 #line 293 "interpreter.y" /* yacc.c:1646  */
     {
-		strcat((yyvsp[-2].sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal)));
-		(yyval.sVal) = (yyvsp[-2].sVal);
-		//std::cout << "VARNAME EQUALS NUM_F" << std::endl;
-		}
+	strcat((yyvsp[-2].sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal)));
+	(yyval.sVal) = (yyvsp[-2].sVal);
+	//std::cout << "VARNAME EQUALS NUM_I" << std::endl;
+}
 #line 1507 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1511,7 +1511,7 @@ yyreduce:
     {
 		strcat((yyvsp[-2].sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal)));
 		(yyval.sVal) = (yyvsp[-2].sVal);
-		//std::cout << "VARNAME EQUALS STRING" << std::endl;	
+		//std::cout << "VARNAME EQUALS NUM_F" << std::endl;
 		}
 #line 1517 "interpreter.tab.c" /* yacc.c:1646  */
     break;
@@ -1519,16 +1519,26 @@ yyreduce:
   case 14:
 #line 305 "interpreter.y" /* yacc.c:1646  */
     {
+		strcat((yyvsp[-2].sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal)));
+		(yyval.sVal) = (yyvsp[-2].sVal);
+		//std::cout << "VARNAME EQUALS STRING" << std::endl;	
+		}
+#line 1527 "interpreter.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 15:
+#line 311 "interpreter.y" /* yacc.c:1646  */
+    {
 			std::string code = formatClass((yyvsp[-2].sVal), (yyvsp[0].sVal));
 			(yyval.sVal) = strcpy(new char[code.length() + 1], code.c_str()); // send results of formatting to $$
 			//std::cout << $4 << std::endl;
 			//std::cout << "CLASS VARNAME EQUALS bcommaExpr" << std::endl;
 		}
-#line 1528 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1538 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
-  case 15:
-#line 312 "interpreter.y" /* yacc.c:1646  */
+  case 16:
+#line 318 "interpreter.y" /* yacc.c:1646  */
     {
 			//std::cout << $3 << std::endl;
 
@@ -1538,69 +1548,69 @@ yyreduce:
 			(yyval.sVal) = strcpy(new char[code.length() + 1], code.c_str()); // send results of formatting to $$
 			//std::cout << "GET EQUALS bcommaExpr" << std::endl;
 		}
-#line 1542 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1552 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
-  case 16:
-#line 322 "interpreter.y" /* yacc.c:1646  */
+  case 17:
+#line 328 "interpreter.y" /* yacc.c:1646  */
     {
 			std::string code = formatSetters((yyvsp[0].sVal));
 			
 			(yyval.sVal) = strcpy(new char[code.length() + 1], code.c_str()); // send results of formatting to $$
 			//std::cout << "SET EQUALS bcommaExpr" << std::endl;
 		}
-#line 1553 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1563 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
-  case 17:
-#line 329 "interpreter.y" /* yacc.c:1646  */
+  case 18:
+#line 335 "interpreter.y" /* yacc.c:1646  */
     {
 			std::string code = formatToString((yyvsp[0].sVal));
 
 			(yyval.sVal) = strcpy(new char[code.length() + 1], code.c_str()); // send results of formatting to $$
 			//std::cout << "STR EQUALS bcommaExpr" << std::endl;
 		}
-#line 1564 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1574 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
-  case 18:
-#line 336 "interpreter.y" /* yacc.c:1646  */
+  case 19:
+#line 342 "interpreter.y" /* yacc.c:1646  */
     {
 	(yyval.sVal) = (yyvsp[-1].sVal);
 	//std::cout << "LPAREN commaExpr RPAREN" << std::endl;
 }
-#line 1573 "interpreter.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 19:
-#line 341 "interpreter.y" /* yacc.c:1646  */
-    {
-		std::cerr << "Empty egg to be hatched, aborting.." << std::endl;
-		exit(1);
-		//std::cout << "LPAREN RPAREN" << std::endl;
-		}
 #line 1583 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
 #line 347 "interpreter.y" /* yacc.c:1646  */
     {
-	strcat((yyval.sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal))); // recover attributes
-	//std::cout << "VARNAME COMMA commaExpr" << std::endl;
-}
-#line 1592 "interpreter.tab.c" /* yacc.c:1646  */
+		std::cerr << "Empty egg to be hatched, aborting.." << std::endl;
+		exit(1);
+		//std::cout << "LPAREN RPAREN" << std::endl;
+		}
+#line 1593 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 352 "interpreter.y" /* yacc.c:1646  */
+#line 353 "interpreter.y" /* yacc.c:1646  */
+    {
+	strcat((yyval.sVal), strcat((yyvsp[-1].sVal), (yyvsp[0].sVal))); // recover attributes
+	//std::cout << "VARNAME COMMA commaExpr" << std::endl;
+}
+#line 1602 "interpreter.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 22:
+#line 358 "interpreter.y" /* yacc.c:1646  */
     {
 			//std::cout << "VARNAME" << std::endl;
 		}
-#line 1600 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1610 "interpreter.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1604 "interpreter.tab.c" /* yacc.c:1646  */
+#line 1614 "interpreter.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1828,7 +1838,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 357 "interpreter.y" /* yacc.c:1906  */
+#line 363 "interpreter.y" /* yacc.c:1906  */
 
 
 int main(int argc, char **argv) {
