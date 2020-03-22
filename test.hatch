@@ -1,0 +1,14 @@
+import sys
+
+#! class Hello = [first, second]
+	#! get = [first, second]
+	#! set = [first, second]
+
+
+def main(argv):
+	h = Hello("Hello", "Hatch!")
+	print(h.get_first(), h.get_second())
+
+
+if(__name__ == '__main__'):
+	main(sys.argv[1:])
