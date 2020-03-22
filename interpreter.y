@@ -236,9 +236,9 @@ std::map<char*, int, StrCompare> var_to_int;
 
 prog: line EOL {
 		//std::cout << "line EOL prog" << std::endl;
-
+		
 		// Print normal or hatched line to stdout
-		printf("%s\n", $1);
+		std::cout << $1 << std::endl;
 		char* empty = new char[0];
 		$1 = empty;
 			 } prog
@@ -276,13 +276,13 @@ line: INDENT PYTHONLINE{
 	}
 	|
 	EXIT{
-		std::cout << "Exiting hatch.." << std::endl;
+		std::cout << "# Exiting hatch.." << std::endl;
 		exit(0);
 	}
 	|
 	{
-		char* newLine = new char[1]{'\n'};
-		$$ = newLine;
+		char* empty = new char[0];
+		$$ = empty;
 	}
 
 preLine: START assign{

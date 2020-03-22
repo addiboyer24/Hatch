@@ -1414,9 +1414,9 @@ yyreduce:
 #line 237 "interpreter.y" /* yacc.c:1646  */
     {
 		//std::cout << "line EOL prog" << std::endl;
-
+		
 		// Print normal or hatched line to stdout
-		printf("%s\n", (yyvsp[-1].sVal));
+		std::cout << (yyvsp[-1].sVal) << std::endl;
 		char* empty = new char[0];
 		(yyvsp[-1].sVal) = empty;
 			 }
@@ -1472,7 +1472,7 @@ yyreduce:
   case 9:
 #line 278 "interpreter.y" /* yacc.c:1646  */
     {
-		std::cout << "Exiting hatch.." << std::endl;
+		std::cout << "# Exiting hatch.." << std::endl;
 		exit(0);
 	}
 #line 1479 "interpreter.tab.c" /* yacc.c:1646  */
@@ -1481,8 +1481,8 @@ yyreduce:
   case 10:
 #line 283 "interpreter.y" /* yacc.c:1646  */
     {
-		char* newLine = new char[1]{'\n'};
-		(yyval.sVal) = newLine;
+		char* empty = new char[0];
+		(yyval.sVal) = empty;
 	}
 #line 1488 "interpreter.tab.c" /* yacc.c:1646  */
     break;

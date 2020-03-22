@@ -1,0 +1,15 @@
+# HelloHatch.Hatch
+import sys
+
+#! class HelloHatch = (hello, hatch)
+	#! get = (hello, hatch)
+	#! set = (hello, hatch)
+	#! str = (hello, hatch)
+
+def main(argv):
+
+	hello_hatch = HelloHatch("Hello", "Hatch!")
+	print(hello_hatch)
+
+if(__name__ == "__main__"):
+	main(sys.argv[1:])

@@ -1,0 +1,134 @@
+\title{\textbf{Hatch} - A Python Preprocessor}
+
+\author{
+	Addison Boyer \\
+	\textit{Natural Language Processing} \\
+	\textit{Spring 2020}
+}
+
+\date{}
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\maketitle
+\begin{center}
+\includegraphics[scale=0.45]{./images/hatchchick.JPG}
+\end{center}
+\pagebreak
+
+\section{Getting Started}
+\paragraph{} All Hatch statements begin with the special Hatch comment identifier (\textbf{\#!}).  If the preprocessor comment identifier is not present, the line will be treated as interpretable Python code.  All lines beginning with \textbf{\#!} will ``hatch'' into interpretable Python code, given the correct Hatch syntax.
+
+\section{Keywords}
+\begin{enumerate}
+\item{\textbf{class}}
+\paragraph{}Used to define a class in hatch.
+\item{\textbf{get}}
+\paragraph{}Used to define getter(s) in hatch.
+\item{\textbf{set}}
+\paragraph{}Used to define setter(s) in hatch.
+\item{\textbf{str}}
+\paragraph{}Used to define a toString() in hatch.
+\item{\textbf{hatch()}}
+\paragraph{}Used to exit a hatch interactive shell.
+\end{enumerate}
+
+\section{The Hatch Egg}
+\paragraph{}The hatch egg is where parameter and attribute names are passed into.  An empty hatch egg will result in the following error: \textit{Empty egg to be hatched, aborting..}
+
+\section{Hatch Syntax}
+\begin{center}
+\#! class Person = (name, age)
+\end{center}
+
+\section{Hello Hatch}
+
+\begin{lstlisting}
+# HelloHatch.Hatch
+import sys
+
+#! class HelloHatch = (hello, hatch)
+	#! get = (hello, hatch)
+	#! set = (hello, hatch)
+	#! str = (hello, hatch)
+
+def main(argv):
+
+	hello_hatch = HelloHatch("Hello", "Hatch!")
+	print(hello_hatch)
+	
+if(__name__ == "__main__"):
+	main(sys.argv[1:])
+
+\end{lstlisting}
+\textbf{make -B} \\ \\
+\textbf{./interpreter.out HelloHatch.Hatch $>$ HelloHatch.py} \\
+\begin{lstlisting}
+# HelloHatch.py
+import sys
+
+     
+class HelloHatch(object):
+	def __init__(self,hello,hatch):
+		self.hello = hello
+		self.hatch = hatch
+
+    
+	def get_hello(self):
+		return self.hello
+	def get_hatch(self):
+		return self.hatch
+
+    
+	def set_hello(self,hello):
+		self.hello = hello
+	def set_hatch(self,hatch):
+		self.hatch = hatch
+
+    
+	def __str__(self):
+		return str(self.hello) + ' ' + str(self.hatch)
+
+
+def main(argv):
+
+	hello_hatch = HelloHatch("Hello", "Hatch!")
+	print(hello_hatch)
+
+if(__name__ == "__main__"):
+	main(sys.argv[1:])
+\end{lstlisting}
+
+\textbf{python3 HelloHatch.py} \\
+
+Hello Hatch!
+
+
+
+\end{document}
