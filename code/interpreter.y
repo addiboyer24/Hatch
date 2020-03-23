@@ -114,19 +114,21 @@ std::string formatGetters(char* attributes){
 // Returns a space delimited toString for given attributes
 std::string formatToString(char* attributes){
 	std::string ret = "def __str__(self):\n\treturn ";
-	char* token = strtok(attributes, ",");
 
 	// get each attribute and append to the return statement
+	std::vector<char*> atts = vectorizeAttributes(attributes);
 	int i = 0;
-	while(token != NULL){
-		std::string append(token);
-		if(i != 0)
-			ret += (" + str(self." + append + ")");
-		else
-			ret += ("str(self." + append + ") + ' '");
-		
+	for(auto iter = std::begin(atts); iter != std::end(atts); ++iter){
+		std::string append(*iter);
+
+		if(i != atts.size() - 1){
+			ret += "str(self." + append + ") + ' ' + ";
+		}
+		else{
+			ret += "str(self." + append + ")";
+		}
+
 		i+=1;
-		token = strtok(NULL, ",");
 	}
 
 	return ret;

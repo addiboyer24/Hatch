@@ -1,0 +1,20 @@
+import sys
+
+#! class Person = (first, last, age, height, weight)
+	#! get = (first, last, age, height, weight)
+	#! set = (first, last, age, height, weight)
+	#! str = (first, last, age)
+
+def main(argv):
+	p = Person("Addi", "Boyer", 23, 70, 170)
+	print(p)
+	print("Happy Birthday %s" % p.get_first())
+	p.set_age(p.get_age() + 1)
+	print(p)
+
+	print("Name Change?")
+	p.set_first(p.get_first() + "son")
+	print(p)
+
+if(__name__ == "__main__"):
+	main(sys.argv[1:])
